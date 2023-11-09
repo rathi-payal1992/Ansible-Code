@@ -9,7 +9,7 @@ jobs:
       - name: My first step - check out repository
         uses: actions/checkout@v4
         with:
-         path: Ansible-Code
+         #path: Ansible-Code
       # This step references the directory that contains the action
       - name: Use local build ansible collection action
         uses: ./.github/workflows/actions/build-ansible
