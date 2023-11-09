@@ -33,3 +33,4 @@ jobs:
         with: 
           name: First-Release
           files: ansible-collection.gz
+          tag_name: first_tag
