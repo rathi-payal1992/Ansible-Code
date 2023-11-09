@@ -15,4 +15,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ansible-collection
-          path: ${{ inputs.LOCAL_ANSIBLE_DIR }}
+          path: ${{ inputs.LOCAL_ANSIBLE_DIR }}.tar
