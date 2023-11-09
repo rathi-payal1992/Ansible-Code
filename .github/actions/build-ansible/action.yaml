@@ -35,9 +35,9 @@ runs:
           # cp roles/deployment/render/defaults/main.yaml ../${{ inputs.local-ansible-directory }}/main.yaml
         ansible-galaxy collection build --force --output-path "../${{ inputs.local-ansible-directory }}/${{inputs.tarball_location}}"
           # cd ..
-        cp ${{inputs.code-checkout-folder-name}}/playbooks/* ${{ inputs.local-ansible-directory }}
-            mkdir "${{ inputs.local-ansible-directory }}/plugins"
-            mkdir "${{ inputs.local-ansible-directory }}/plugins/vars"
+        cp ./playbooks/* ${{ inputs.local-ansible-directory }}
+        mkdir "${{ inputs.local-ansible-directory }}/plugins"
+        mkdir "${{ inputs.local-ansible-directory }}/plugins/vars"
            # mkdir "${{ inputs.local-ansible-directory }}/bin"
           # cp ${{inputs.code-checkout-folder-name}}/plugins/vars/* "${{ inputs.local-ansible-directory }}/plugins/vars"
           # cp ${{inputs.code-checkout-folder-name}}/bin/* "${{ inputs.local-ansible-directory }}/bin"
