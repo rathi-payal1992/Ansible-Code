@@ -1,0 +1,18 @@
+name: building ansible collection using custom build action and uploading artifacts
+on: workflow_dispatch
+
+jobs:
+  create_ansible-folder:
+    runs-on: ubuntu-latest
+    name: Create ansible folder
+    steps:
+      - name: My first step - check out repository
+        uses: actions/checkout@v4
+      # This step references the directory that contains the action
+      - name: Use local build ansible collection action
+        uses: ./.github/actions/build-ansible
+      - name: upload the built ansible collection
+        uses: actions/upload-artifact@v3
+        with:
+          name: ansible-collection
+          path: ${{ inputs.LOCAL_ANSIBLE_DIR }}
