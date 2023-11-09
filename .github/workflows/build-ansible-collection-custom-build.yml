@@ -32,5 +32,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with: 
           name: First-Release
-          files: ansible-collection
+          files: ansible-collection/test.yaml
           tag_name: first_tag
