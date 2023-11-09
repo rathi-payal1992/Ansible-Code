@@ -13,8 +13,23 @@ jobs:
       # This step references the directory that contains the action
       - name: Use local build ansible collection action
         uses: ./.github/actions/build-ansible
-      - name: upload the built ansible collection
-        uses: actions/upload-artifact@v3
-        with:
-          name: ansible-collection
-          path: ansible-local
+      # - name: upload the built ansible collection
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: ansible-collection
+      #     path: ansible-local
+      - name : download artifact
+        uses: actions/download-artifact@v3
+        with: 
+           name: ansible-collection
+           path: ansible-collection
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with: 
+          name: First-Release
+          files: ansible-collection.gz
